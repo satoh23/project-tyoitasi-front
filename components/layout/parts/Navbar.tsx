@@ -1,13 +1,18 @@
 import React from "react";
 import Link from "next/link";
 import { useState, useRef } from "react";
+import { useRouter } from "next/router";
 
-const Navbar = () => {
+import { logout } from "../../../api/auth/logout";
+
+const Navbar = ({ nowLogin }) => {
+  const router = useRouter();
   const menuContentEl = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const handleActive = () => {
     setIsActive(!isActive);
   };
+
   return (
     <div>
       <nav
@@ -75,28 +80,53 @@ const Navbar = () => {
         </button>
         <aside className="">
           <div className="lg:ml-auto min-w-full w-max flex flex-col lg:h-auto mt-12 lg:mt-14 z-30">
-            <button
-              className="min-w-max hover:bg-nav-yellow mb-6"
-              onClick={() => console.log("aa")}
-            >
-              <div className="border-b border-border-yellow ml-2 px-3 py-2 rounded text-yellow-600 hover:text-white hover:bg-nav-yellow text-left">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 inline-block pb-1 ml-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-                  />
-                </svg>
-                ログアウト
-              </div>
-            </button>
+            {nowLogin ? (
+              <button
+                className="min-w-max hover:bg-nav-yellow mb-6"
+                onClick={() => logout()}
+              >
+                <div className="border-b border-border-yellow ml-2 px-3 py-2 rounded text-yellow-600 hover:text-white hover:bg-nav-yellow text-left">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 inline-block pb-1 ml-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                    />
+                  </svg>
+                  ログアウト
+                </div>
+              </button>
+            ) : (
+              <button
+                className="min-w-max hover:bg-nav-yellow mb-6"
+                onClick={() => router.push("/auth/auth")}
+              >
+                <div className="border-b border-border-yellow ml-2 px-3 py-2 rounded text-yellow-600 hover:text-white hover:bg-nav-yellow text-left">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 inline-block pb-1 ml-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                    />
+                  </svg>
+                  ログイン
+                </div>
+              </button>
+            )}
           </div>
         </aside>
       </div>

@@ -1,19 +1,27 @@
 import React from "react";
 import Head from "next/head";
+import { useState } from "react";
+import { useEffect } from "react";
 
 import Navbar from "./parts/Navbar";
 import Sidebar from "./parts/Sidebar";
 
-const Layout: React.FC = ({ children }) => {
+import { refreshToken } from "../../api/auth/refresh_token";
+
+const Layout = ({ children }) => {
+  const [nowLogin, setNowLogin] = useState(false);
+  useEffect(() => {
+    refreshToken().then((res) => setNowLogin(res));
+  }, []);
+
   return (
     <div>
       <Head>
-        <title>ちょいたし！</title>
+        <title>ちょいたし!</title>
       </Head>
       <header>
-        <Navbar />
-        <Sidebar />
-        {/* <Footerbar /> */}
+        <Navbar nowLogin={nowLogin} />
+        <Sidebar nowLogin={nowLogin} />
       </header>
 
       <div className="flex justify-center items-center flex-col min-h-screen text-black font-mono">
