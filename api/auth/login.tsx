@@ -9,9 +9,11 @@ export async function login(email: string, password: string) {
     credentials: "include",
   }).then((res) => {
     if (res.status === 400) {
-      return false;
+      isSuccess = false;
     } else if (res.ok) {
-      return true;
+      isSuccess = true;
     }
   });
+  window.location.reload();
+  return isSuccess;
 }

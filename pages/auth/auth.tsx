@@ -50,19 +50,21 @@ const Auth: React.FC = () => {
   const authUser = (e) => {
     e.preventDefault();
     if (isLogin === true) {
-      let isSuccess = login(email, password);
-      if (isSuccess) {
-        router.push("/");
-      } else {
-        alert("ログインに失敗しました");
-      }
+      login(email, password).then((res) => {
+        if (res === true) {
+        } else if (res === false) {
+          alert("ログインに失敗しました");
+        }
+      });
+      router.push("/");
     } else if (isLogin === false) {
-      let isSuccess = createUser(userName, email, password);
-      if (isSuccess) {
-        router.push("/auth/confirm");
-      } else {
-        alert("アカウント作成に失敗しました");
-      }
+      createUser(userName, email, password).then((res) => {
+        if (res === true) {
+        } else if (res === false) {
+          alert("アカウント作成に失敗しました");
+        }
+      });
+      router.push("/auth/confirm");
     }
   };
 

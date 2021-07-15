@@ -51,4 +51,5 @@ export async function logout() {
   } catch (err) {
     alert(err);
   }
+  window.location.reload();
 }
