@@ -1,7 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Layout from "../../components/layout/Layout";
 import { useRouter } from "next/router";
+import Image from 'next/image';
+
+import Layout from "../../components/layout/Layout";
 
 
 const Edit = () => {
@@ -209,10 +211,11 @@ const Edit = () => {
           <form onSubmit={update} method="post">
             <div className="text-center">
               <div>
-                <img
+                <Image
                   src={isChangeFile ? previwIcon : user.icon}
                   alt="icon"
-                  className="rounded-full sm:w-40 sm:h-40 w-32 h-32 container mx-auto border-yellow-300 border shadow-md"
+                  width={400}
+                  height={350}
                 />
               </div>
               <div className="mt-6">
@@ -263,10 +266,11 @@ const Edit = () => {
         ) : (
           <div className="text-center">
             <div>
-              <img
+              <Image
                 src={user.icon ? user.icon : "/anonymous.jpg"}
                 alt="icon"
-                className="rounded-full md:w-40 md:h-40 w-32 h-32 container mx-auto border-yellow-300 border shadow-md"
+                width={400}
+                height={350}
               />
               <h2 className="w-3/4 m-auto pb-4 text-xl md:text-2xl font-semibold mt-6 border-yellow-200 border-b border-dashed">
                 {user.name}

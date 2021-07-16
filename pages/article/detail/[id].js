@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import useSWR from "swr";
+import Image from 'next/image'
 
 import Layout from "../../../components/layout/Layout";
 import { getAllArticleIds, getArticleData } from "../../../lib/article/getList";
@@ -37,10 +38,11 @@ export default function Article({ staticArticle, id }) {
                     {article.title}
                 </div>
                 <div className="flex mt-3 mb-3">
-                <img
+                <Image
                     src={article.thumbnail ? article.thumbnail : "/NoImage.jpg"} 
                     alt="icon" 
-                    className="w-2/6 m-auto rounded-md"/>
+                    width={300}
+                    height={300}/>
                 <div className="w-3/6 text-xs md:text-base">
                     <div className="font-bold text-gray-500 border-b border-yellow-400 border-dotted">材料</div>
                     <div>{article.material}</div>
