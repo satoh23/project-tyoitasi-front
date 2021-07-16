@@ -11,7 +11,7 @@ import { refreshToken } from "../../api/auth/refresh_token";
 const Layout = ({ children }) => {
   const [nowLogin, setNowLogin] = useState(false);
   useEffect(() => {
-    // refreshToken().then((res) => setNowLogin(res));
+    refreshToken().then((res) => setNowLogin(res));
   }, []);
 
   return (
