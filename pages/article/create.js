@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import Cookie from "universal-cookie";
+import Image from 'next/image'
 
 import Layout from "../../components/layout/Layout";
 
@@ -154,10 +155,11 @@ const Create = () => {
       <Layout>
         <div className="w-full sm:w-3/4 lg:w-2/4 mb-10 md:mb-0 text-center">
           <div>
-            <img
+            <Image
               src={previwThumbnail ? previwThumbnail : "/NoImage.jpg"}
               alt="icon"
-              className="w-auto h-64 md:h-96 container mx-auto border-yellow-300 border shadow-md"
+              width={350}
+              height={350}
             />
           </div>
           <div className="mt-6">
