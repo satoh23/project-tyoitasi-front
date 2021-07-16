@@ -12,19 +12,16 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Article({ staticArticle, id }) {
     const router = useRouter();
-
-
     const {data: article, mutate} = useSWR(
         `${process.env.NEXT_PUBLIC_RESTAPI_URL}api/v1/get-detail-article/${id}/`,
         fetcher, 
         {
-          initialData: staticArticle.article,
+          initialData: staticArticle,
         }
     );
 
     useEffect(() => {
         mutate();
-        console.log(article)
     }, []);
 
     if (router.isFallback  ||  !article) {
