@@ -14,6 +14,6 @@ export async function login(email: string, password: string) {
       isSuccess = true;
     }
   });
-  // window.location.reload();
+  window.location.reload();
   return isSuccess;
 }
