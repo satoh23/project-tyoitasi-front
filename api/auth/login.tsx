@@ -6,7 +6,7 @@ export async function login(email: string, password: string) {
     headers: {
       "Content-Type": "application/json",
     },
-    // credentials: "include",
+    credentials: "include",
   }).then((res) => {
     if (res.status === 400) {
       isSuccess = false;

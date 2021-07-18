@@ -7,7 +7,7 @@ export async function logout() {
       headers: {
         "Content-Type": "application/json",
       },
-      // credentials: "include",
+      credentials: "include",
     }).then((res) => {
       if (res.status === 401) {
         haveValidToken = false;
@@ -27,7 +27,7 @@ export async function logout() {
           headers: {
             "Content-Type": "application/json",
           },
-          // credentials: "include",
+          credentials: "include",
         }
       ).then((res) => {
         if (res.ok) {
@@ -45,7 +45,7 @@ export async function logout() {
         headers: {
           "Content-Type": "application/json",
         },
-        // credentials: "include",
+        credentials: "include",
       });
     }
   } catch (err) {
