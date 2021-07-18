@@ -5,7 +5,7 @@ export async function refreshToken() {
     headers: {
       "Content-Type": "application/json",
     },
-    credentials: "include",
+    // credentials: "include",
   }).then((res) => {
     if (res.ok) {
       isSuccess = true;
