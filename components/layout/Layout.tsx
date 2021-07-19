@@ -12,10 +12,10 @@ import { refreshToken } from "../../api/auth/refresh_token";
 const cookie = new Cookie();
 
 const Layout = ({ children }) => {
-  // const [nowLogin, setNowLogin] = useState(false);
-  const nowLogin = cookie.get("NLN");
+  const [nowLogin, setNowLogin] = useState(false);
   useEffect(() => {
-    // refreshToken().then((res) => setNowLogin(res));
+    setNowLogin(cookie.get("NLN"));
+    refreshToken();
   }, []);
 
   return (

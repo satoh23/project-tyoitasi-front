@@ -13,7 +13,6 @@ const fetcher = (url) => fetch(url,
         headers: {
             "Content-Type": "application/json",
         },
-        // credentials: "include"
     }).then((res) => res.json());
 const apiUrl = `${process.env.NEXT_PUBLIC_RESTAPI_URL}api/v1/get-list-article/`;
 
