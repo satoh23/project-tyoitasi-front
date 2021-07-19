@@ -13,6 +13,7 @@ const cookie = new Cookie();
 const Layout = ({ children }) => {
   const [nowLogin, setNowLogin] = useState(false);
   useEffect(() => {
+    cookie.set("myCat", "Pacman");
     console.log(cookie.get("UID"));
     refreshToken();
   }, []);
