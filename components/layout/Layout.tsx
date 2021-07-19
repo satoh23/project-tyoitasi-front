@@ -1,19 +1,19 @@
 import React from "react";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import Cookie from "universal-cookie";
+
+import { parseCookies } from "nookies";
+import { NextPageContext } from "next";
 
 import Navbar from "./parts/Navbar";
 import Sidebar from "./parts/Sidebar";
 
 import { refreshToken } from "../../api/auth/refresh_token";
 
-const cookie = new Cookie();
-
-const Layout = ({ children }) => {
+const Layout = ({ children, ctx }) => {
   const [nowLogin, setNowLogin] = useState(false);
-  const author = cookie.get("UID");
-  const isLogin = cookie.get("NLN");
+  const author = ctx.req.headers.cookie.UID;
+  const isLogin = true;
   useEffect(() => {
     setNowLogin(isLogin);
     console.log(isLogin);
