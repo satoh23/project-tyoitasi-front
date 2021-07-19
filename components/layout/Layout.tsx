@@ -8,15 +8,16 @@ import Sidebar from "./parts/Sidebar";
 
 import { refreshToken } from "../../api/auth/refresh_token";
 
+const cookies = new Cookies();
+
 const Layout = ({ children }) => {
-  const cookies = new Cookies();
   const [nowLogin, setNowLogin] = useState(false);
   useEffect(() => {
     const author = cookies.get("UID");
     const isLogin = cookies.get("NLN");
     setNowLogin(isLogin);
     console.log(isLogin);
-    console.log(author);
+    console.log(cookies.get("NLN"));
     refreshToken();
   }, []);
 
