@@ -1,15 +1,19 @@
 import React from "react";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import Cookie from "universal-cookie";
 
 import Navbar from "./parts/Navbar";
 import Sidebar from "./parts/Sidebar";
 
 import { refreshToken } from "../../api/auth/refresh_token";
 
+const cookie = new Cookie();
+
 const Layout = ({ children }) => {
   const [nowLogin, setNowLogin] = useState(false);
   useEffect(() => {
+    cookie.get("UID");
     refreshToken();
   }, []);
 
