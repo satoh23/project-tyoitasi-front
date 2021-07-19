@@ -1,14 +1,14 @@
 import React from "react";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import UniversalCookie from "universal-cookie";
+import Cookie from "universal-cookie";
 
 import Navbar from "./parts/Navbar";
 import Sidebar from "./parts/Sidebar";
 
 import { refreshToken } from "../../api/auth/refresh_token";
 
-const cookie = new UniversalCookie();
+const cookie = new Cookie();
 
 const Layout = ({ children }) => {
   const [nowLogin, setNowLogin] = useState(false);
@@ -16,14 +16,16 @@ const Layout = ({ children }) => {
     const author = cookie.get("UID");
     const isLogin = cookie.get("NLN");
     setNowLogin(isLogin);
-    console.log("更新");
+    if (isLogin) {
+      console.log("dsafds");
+    }
     refreshToken();
   }, []);
 
   return (
     <div>
       <Head>
-        <title>{nowLogin}</title>
+        <title>ちょいたし！</title>
       </Head>
       <header>
         <Navbar nowLogin={nowLogin} />
