@@ -9,9 +9,9 @@ export async function login(email, password) {
   }).then((res) => {
     if (res.status === 400) {
       return false
+    } else {
+      return res.json();
     }
-  }).then((res) => {
-    return res.json()
   })
   window.location.reload();
   return result
