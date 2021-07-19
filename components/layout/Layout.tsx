@@ -16,9 +16,8 @@ const Layout = ({ children }) => {
     const author = cookies.get("UID");
     const isLogin = cookies.get("NLN");
     setNowLogin(isLogin);
-    if (isLogin) {
-      console.log("dsafds");
-    }
+    console.log(isLogin);
+    console.log(author);
     refreshToken();
   }, []);
 
