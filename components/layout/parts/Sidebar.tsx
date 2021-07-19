@@ -1,6 +1,5 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import Cookie from "universal-cookie";
 
@@ -10,21 +9,15 @@ const cookie = new Cookie();
 
 const Sidebar = () => {
   const router = useRouter();
-  const [nowLogin, setNowLogin] = useState(false);
+  const nowLogin = cookie.get("NLN");
 
-  useEffect(() => {
-    const nowLogin = cookie.get("NLN");
-    if (nowLogin) {
-      setNowLogin(true);
-    }
-  }, []);
   return (
     <div>
       <div className="h-screen w-1/6 float-left hidden lg:block"></div>
       <div className="fixed h-full bg-side-yellow w-1/6 hidden lg:block border-r border-border-yellow">
         <aside className="">
           <div className="lg:ml-auto min-w-full w-max flex flex-col lg:h-auto mt-16">
-            {nowLogin ? (
+            {nowLogin.length > 10 ? (
               <>
                 <Link href="/article/create">
                   <a className="border-b border-border-yellow w-full px-3 py-2 mb-4 mt-4 ml-2 rounded text-yellow-600 hover:bg-hover-yellow hover:text-white">

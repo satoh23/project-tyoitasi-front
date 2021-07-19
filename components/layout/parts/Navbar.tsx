@@ -11,18 +11,11 @@ const cookie = new Cookie();
 const Navbar = () => {
   const router = useRouter();
   const menuContentEl = useRef(null);
-  const [nowLogin, setNowLogin] = useState(false);
+  const nowLogin = cookie.get("NLN");
   const [isActive, setIsActive] = useState(false);
   const handleActive = () => {
     setIsActive(!isActive);
   };
-
-  useEffect(() => {
-    const nowLogin = cookie.get("NLN");
-    if (nowLogin) {
-      setNowLogin(true);
-    }
-  }, []);
 
   return (
     <div>
@@ -91,7 +84,7 @@ const Navbar = () => {
         </button>
         <aside className="">
           <div className="lg:ml-auto min-w-full w-max flex flex-col lg:h-auto mt-12 lg:mt-14 z-30">
-            {nowLogin ? (
+            {nowLogin.length > 10 ? (
               <>
                 <Link href="/article/create">
                   <a className="border-b border-pink-200 w-full px-3 py-2 mb-4 mt-4 ml-2 rounded text-yellow-600 hover:bg-hover-yellow hover:text-white">
