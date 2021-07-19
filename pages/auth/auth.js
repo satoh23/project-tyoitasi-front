@@ -53,7 +53,7 @@ const Auth = () => {
   const authUser = (e) => {
     e.preventDefault();
     if (isLogin === true) {
-      login(email, password).then((res) => console.log(res.user))
+      login(email, password).then((res) => console.log(res))
       router.push("/");
     } else if (isLogin === false) {
       createUser(userName, email, password).then((res) => {
