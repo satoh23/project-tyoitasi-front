@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
     const author = cookie.get("UID");
     const isLogin = cookie.get("NLN");
     console.log(cookie.get("NLN"));
-    setNowLogin(isLogin);
+    setNowLogin(true);
     console.log(author);
     refreshToken();
   }, []);
