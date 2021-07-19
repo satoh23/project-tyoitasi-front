@@ -1,27 +1,24 @@
 import React from "react";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import Cookie from "universal-cookie";
+import UniversalCookie from "universal-cookie";
 
 import Navbar from "./parts/Navbar";
 import Sidebar from "./parts/Sidebar";
 
 import { refreshToken } from "../../api/auth/refresh_token";
 
-const cookie = new Cookie();
+const cookie = new UniversalCookie();
 
 const Layout = ({ children }) => {
   const [nowLogin, setNowLogin] = useState(false);
+  const author = cookie.get("UID");
+  const isLogin = cookie.get("NLN");
   useEffect(() => {
-    const aa = async () => {
-      const author = cookie.get("UID");
-      const isLogin = cookie.get("NLN");
-      setNowLogin(isLogin);
-      console.log(isLogin);
-      console.log(cookie.get("UID"));
-      console.log("更新した");
-    };
-    aa();
+    setNowLogin(isLogin);
+    console.log(isLogin);
+    console.log(cookie.get("UID"));
+    console.log("更新");
     refreshToken();
   }, []);
 
