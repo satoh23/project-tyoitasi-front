@@ -12,12 +12,10 @@ const cookie = new UniversalCookie();
 
 const Layout = ({ children }) => {
   const [nowLogin, setNowLogin] = useState(false);
-  const author = cookie.get("UID");
-  const isLogin = cookie.get("NLN");
   useEffect(() => {
+    const author = cookie.get("UID");
+    const isLogin = cookie.get("NLN");
     setNowLogin(isLogin);
-    console.log(isLogin);
-    console.log(cookie.get("UID"));
     console.log("更新");
     refreshToken();
   }, []);
@@ -25,7 +23,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Head>
-        <title>ちょいたし!</title>
+        <title>{nowLogin}</title>
       </Head>
       <header>
         <Navbar nowLogin={nowLogin} />
