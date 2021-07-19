@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Cookie from "universal-cookie";
 
@@ -9,7 +10,14 @@ const cookie = new Cookie();
 
 const Sidebar = () => {
   const router = useRouter();
-  const nowLogin = cookie.get("NLN");
+  const [nowLogin, setNowLogin] = useState(false);
+
+  useEffect(() => {
+    const nowLogin = cookie.get("NLN");
+    if (nowLogin) {
+      setNowLogin(true);
+    }
+  }, []);
   return (
     <div>
       <div className="h-screen w-1/6 float-left hidden lg:block"></div>

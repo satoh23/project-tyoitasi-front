@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/router";
 import Cookie from "universal-cookie";
 
@@ -10,12 +10,19 @@ const cookie = new Cookie();
 
 const Navbar = () => {
   const router = useRouter();
-  const nowLogin = cookie.get("NLN");
   const menuContentEl = useRef(null);
+  const [nowLogin, setNowLogin] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const handleActive = () => {
     setIsActive(!isActive);
   };
+
+  useEffect(() => {
+    const nowLogin = cookie.get("NLN");
+    if (nowLogin) {
+      setNowLogin(true);
+    }
+  }, []);
 
   return (
     <div>

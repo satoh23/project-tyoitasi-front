@@ -1,15 +1,11 @@
 import React from "react";
 import Head from "next/head";
-import { useState } from "react";
 import { useEffect } from "react";
-import Cookie from "universal-cookie";
 
 import Navbar from "./parts/Navbar";
 import Sidebar from "./parts/Sidebar";
 
 import { refreshToken } from "../../api/auth/refresh_token";
-
-const cookie = new Cookie();
 
 const Layout = ({ children }) => {
   useEffect(() => {
