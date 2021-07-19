@@ -13,9 +13,11 @@ const cookie = new Cookie();
 const Layout = ({ children }) => {
   const [nowLogin, setNowLogin] = useState(false);
   useEffect(() => {
+    const author = cookie.get("UID");
     const isLogin = cookie.get("NLN");
     setNowLogin(isLogin);
     console.log(isLogin);
+    console.log(author);
     refreshToken();
   }, []);
 
