@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import useSWR from "swr";
-import Cookie from "universal-cookie";
 
 import Layout from "../components/layout/Layout";
 import Article from "../components/article/Article";
@@ -17,8 +16,6 @@ const fetcher = (url) => fetch(url,
     }).then((res) => res.json());
 const apiUrl = `${process.env.NEXT_PUBLIC_RESTAPI_URL}api/v1/get-list-article/`;
 
-const cookie = new Cookie();
-
 export default function Home({ staticArticles }) {
     const router = useRouter();
     const {data, mutate} = useSWR(apiUrl, fetcher, {
@@ -30,7 +27,6 @@ export default function Home({ staticArticles }) {
     );
 
     useEffect(() => {
-        console.log(cookie.get("UID"))
         mutate();
     }, []);
 
