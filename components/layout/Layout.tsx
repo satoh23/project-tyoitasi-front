@@ -12,9 +12,7 @@ import { refreshToken } from "../../api/auth/refresh_token";
 const cookie = new Cookie();
 
 const Layout = ({ children }) => {
-  const [nowLogin, setNowLogin] = useState(false);
   useEffect(() => {
-    setNowLogin(cookie.get("NLN"));
     refreshToken();
   }, []);
 
@@ -24,8 +22,8 @@ const Layout = ({ children }) => {
         <title>ちょいたし!</title>
       </Head>
       <header>
-        <Navbar nowLogin={nowLogin} />
-        <Sidebar nowLogin={nowLogin} />
+        <Navbar />
+        <Sidebar />
       </header>
 
       <div className="flex justify-center items-center flex-col min-h-screen text-black font-mono">

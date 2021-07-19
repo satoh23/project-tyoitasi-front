@@ -2,11 +2,15 @@ import React from "react";
 import Link from "next/link";
 import { useState, useRef } from "react";
 import { useRouter } from "next/router";
+import Cookie from "universal-cookie";
 
 import { logout } from "../../../api/auth/logout";
 
-const Navbar = ({ nowLogin }) => {
+const cookie = new Cookie();
+
+const Navbar = () => {
   const router = useRouter();
+  const nowLogin = cookie.get("NLN");
   const menuContentEl = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const handleActive = () => {
