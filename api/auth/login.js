@@ -10,7 +10,7 @@ export async function login(email, password) {
     if (res.status === 400) {
       return false
     } else {
-      return res.json();
+      return res
     }
   })
   // window.location.reload();
