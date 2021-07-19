@@ -1,10 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/router";
+import Cookie from "universal-cookie";
 
 import { logout } from "../../../api/auth/logout";
-
+const cookie = new Cookie();
 const Navbar = ({ nowLogin }) => {
   const router = useRouter();
   const menuContentEl = useRef(null);
@@ -12,6 +13,14 @@ const Navbar = ({ nowLogin }) => {
   const handleActive = () => {
     setIsActive(!isActive);
   };
+
+  const author = cookie.get("UID");
+  const isLogin = cookie.get("NLN");
+  useEffect(() => {
+    console.log(isLogin);
+    console.log(cookie.get("UID"));
+    console.log("レイアウト");
+  }, []);
 
   return (
     <div>

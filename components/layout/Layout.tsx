@@ -15,10 +15,10 @@ const Layout = ({ children }) => {
   const author = cookie.get("UID");
   const isLogin = cookie.get("NLN");
   useEffect(() => {
-    setNowLogin(isLogin);
-    console.log(isLogin);
-    console.log(cookie.get("UID"));
-    console.log("更新した");
+    // setNowLogin(isLogin);
+    // console.log(isLogin);
+    // console.log(cookie.get("UID"));
+    // console.log("更新した");
     refreshToken();
   }, []);
 
