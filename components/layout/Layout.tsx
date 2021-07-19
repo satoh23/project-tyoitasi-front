@@ -12,10 +12,10 @@ const cookie = new Cookie();
 
 const Layout = ({ children }) => {
   const [nowLogin, setNowLogin] = useState(false);
-  const author = cookie.get("UID");
-  const isLogin = cookie.get("NLN");
   useEffect(() => {
     const aa = async () => {
+      const author = cookie.get("UID");
+      const isLogin = cookie.get("NLN");
       setNowLogin(isLogin);
       console.log(isLogin);
       console.log(cookie.get("UID"));
