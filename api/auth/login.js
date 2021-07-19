@@ -13,6 +13,6 @@ export async function login(email, password) {
       return res.json();
     }
   })
-  // window.location.reload();
+  window.location.reload();
   return result
 }
