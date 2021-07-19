@@ -12,7 +12,6 @@ const cookie = new Cookie();
 
 const Layout = ({ children }) => {
   const [nowLogin, setNowLogin] = useState(false);
-  const [now, setNow] = useState(false);
   useEffect(() => {
     const author = cookie.get("UID");
     const isLogin = cookie.get("NLN");
@@ -20,7 +19,7 @@ const Layout = ({ children }) => {
     setNowLogin(isLogin);
     console.log(author);
     refreshToken();
-  }, [now]);
+  }, []);
 
   return (
     <div>
@@ -35,7 +34,6 @@ const Layout = ({ children }) => {
       <div className="flex justify-center items-center flex-col min-h-screen text-black font-mono">
         <main className="flex flex-1 float-right justify-center items-center flex-col w-full mt-20 lg:mt-24 mb-16 lg:mb-3">
           {children}
-          <button onClick={() => setNow(!now)}>gaga</button>
         </main>
         <footer className="w-full h-6 flex justify-center items-center text-gray-500 text-sm"></footer>
       </div>
