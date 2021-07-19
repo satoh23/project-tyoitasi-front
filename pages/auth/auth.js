@@ -54,7 +54,7 @@ const Auth = () => {
     e.preventDefault();
     if (isLogin === true) {
       const isSuccess = login(email, password);
-      cookie.set("NLN", isSuccess.user.id);
+      console.log(isSuccess)
       router.push("/");
     } else if (isLogin === false) {
       createUser(userName, email, password).then((res) => {
