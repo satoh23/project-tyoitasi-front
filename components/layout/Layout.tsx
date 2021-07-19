@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
   useEffect(() => {
     setNowLogin(isLogin);
     console.log(isLogin);
-    console.log(author);
+    console.log(cookie.get("UID"));
     console.log("更新");
     refreshToken();
   }, []);
