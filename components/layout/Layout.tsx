@@ -18,13 +18,14 @@ const Layout = ({ children, ctx }) => {
     setNowLogin(isLogin);
     console.log(isLogin);
     console.log(author);
+    console.log("更新");
     refreshToken();
   }, []);
 
   return (
     <div>
       <Head>
-        <title>{author}</title>
+        <title>ちょいたし!</title>
       </Head>
       <header>
         <Navbar nowLogin={nowLogin} />
