@@ -13,7 +13,7 @@ const cookie = new Cookie();
 const Layout = ({ children }) => {
   const [nowLogin, setNowLogin] = useState(false);
   useEffect(() => {
-    window.setTimeout(() => console.log(cookie.get("UID")), 3000);
+    window.setTimeout(() => console.log(cookie.get("refresh")), 3000);
     refreshToken();
   }, []);
 
