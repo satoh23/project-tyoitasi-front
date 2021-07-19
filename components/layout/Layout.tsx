@@ -18,9 +18,9 @@ const Layout = ({ children }) => {
       const isLogin = cookie.get("NLN");
       console.log(cookie.get("NLN"));
       setNowLogin(isLogin);
-      console.log(isLogin);
     };
     aa();
+    console.log(nowLogin);
     refreshToken();
   }, []);
 
