@@ -10,16 +10,14 @@ import { refreshToken } from "../../api/auth/refresh_token";
 
 const Layout = ({ children }) => {
   const [nowLogin, setNowLogin] = useState(false);
-  const [test, setTest] = useState(false);
   useEffect(() => {
     refreshToken().then((res) => setNowLogin(res));
-  }, [test]);
+  }, []);
 
   return (
     <div>
       <Head>
         <title>ちょいたし!</title>
-        <button onClick={() => setTest(!test)}>dgさdg</button>
       </Head>
       <header>
         <Navbar nowLogin={nowLogin} />
