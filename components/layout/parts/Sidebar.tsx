@@ -17,7 +17,7 @@ const Sidebar = () => {
       <div className="fixed h-full bg-side-yellow w-1/6 hidden lg:block border-r border-border-yellow">
         <aside className="">
           <div className="lg:ml-auto min-w-full w-max flex flex-col lg:h-auto mt-16">
-            {nowLogin > 10 ? (
+            {nowLogin ? (
               <>
                 <Link href="/article/create">
                   <a className="border-b border-border-yellow w-full px-3 py-2 mb-4 mt-4 ml-2 rounded text-yellow-600 hover:bg-hover-yellow hover:text-white">
