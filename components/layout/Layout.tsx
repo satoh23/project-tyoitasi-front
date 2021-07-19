@@ -1,20 +1,20 @@
 import React from "react";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import Cookie from "universal-cookie";
+import Cookies from "universal-cookie";
 
 import Navbar from "./parts/Navbar";
 import Sidebar from "./parts/Sidebar";
 
 import { refreshToken } from "../../api/auth/refresh_token";
 
-const cookie = new Cookie();
+const cookies = new Cookies();
 
 const Layout = ({ children }) => {
   const [nowLogin, setNowLogin] = useState(false);
   useEffect(() => {
-    const author = cookie.get("UID");
-    const isLogin = cookie.get("NLN");
+    const author = cookies.get("UID");
+    const isLogin = cookies.get("NLN");
     setNowLogin(isLogin);
     if (isLogin) {
       console.log("dsafds");
