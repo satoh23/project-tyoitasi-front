@@ -15,6 +15,7 @@ const Layout = ({ children }) => {
   useEffect(() => {
     const isLogin = cookie.get("NLN");
     setNowLogin(isLogin);
+    console.log(isLogin);
     refreshToken();
   }, []);
 
