@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
     setNowLogin(isLogin);
     console.log(isLogin);
     console.log(cookie.get("UID"));
-    console.log("更新");
+    console.log("更新した");
     refreshToken();
   }, []);
 
