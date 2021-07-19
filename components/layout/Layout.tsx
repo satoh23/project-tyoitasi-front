@@ -16,8 +16,8 @@ const Layout = ({ children, ctx }) => {
   const isLogin = true;
   useEffect(() => {
     setNowLogin(isLogin);
-    console.log(isLogin);
-    console.log(author);
+    // console.log(isLogin);
+    // console.log(author);
     console.log("更新");
     refreshToken();
   }, []);
