@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Cookie from "universal-cookie";
 
 import { login } from "../../api/auth/login";
 import { createUser } from "../../api/auth/createUser";
@@ -21,6 +22,8 @@ interface CreateProps<T> {
   password: T;
   setPassword: T;
 }
+
+const cookie = new Cookie();
 
 const Auth: React.FC = () => {
   const router = useRouter();
@@ -52,6 +55,7 @@ const Auth: React.FC = () => {
     if (isLogin === true) {
       login(email, password).then((res) => {
         if (res === true) {
+          cookie.set("NLN", true);
         } else if (res === false) {
           alert("ログインに失敗しました");
         }
