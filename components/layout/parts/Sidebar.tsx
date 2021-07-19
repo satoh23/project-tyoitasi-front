@@ -1,15 +1,11 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Cookie from "universal-cookie";
 
 import { logout } from "../../../api/auth/logout";
 
-const cookie = new Cookie();
-
-const Sidebar = () => {
+const Sidebar = ({ nowLogin }) => {
   const router = useRouter();
-  const nowLogin = cookie.get("NLN");
 
   return (
     <div>

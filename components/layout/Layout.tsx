@@ -1,14 +1,20 @@
 import React from "react";
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Cookie from "universal-cookie";
 
 import Navbar from "./parts/Navbar";
 import Sidebar from "./parts/Sidebar";
 
 import { refreshToken } from "../../api/auth/refresh_token";
 
+const cookie = new Cookie();
+
 const Layout = ({ children }) => {
+  const [nowLogin, setNowLogin] = useState(false);
   useEffect(() => {
+    const isLogin = cookie.get("NLN");
+    setNowLogin(isLogin);
     refreshToken();
   }, []);
 
@@ -18,8 +24,8 @@ const Layout = ({ children }) => {
         <title>ちょいたし!</title>
       </Head>
       <header>
-        <Navbar />
-        <Sidebar />
+        <Navbar nowLogin={nowLogin} />
+        <Sidebar nowLogin={nowLogin} />
       </header>
 
       <div className="flex justify-center items-center flex-col min-h-screen text-black font-mono">
