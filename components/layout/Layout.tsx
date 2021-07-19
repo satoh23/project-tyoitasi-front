@@ -1,23 +1,21 @@
 import React from "react";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import Cookies from "universal-cookie";
+import Cookies from "js-cookie";
 
 import Navbar from "./parts/Navbar";
 import Sidebar from "./parts/Sidebar";
 
 import { refreshToken } from "../../api/auth/refresh_token";
 
-const cookies = new Cookies();
-
 const Layout = ({ children }) => {
   const [nowLogin, setNowLogin] = useState(false);
   useEffect(() => {
-    const author = cookies.get("UID");
-    const isLogin = cookies.get("NLN");
+    const author = Cookies.get("UID");
+    const isLogin = Cookies.get("NLN");
     setNowLogin(isLogin);
     console.log(isLogin);
-    console.log(cookies.get("NLN"));
+    console.log(Cookies.get("NLN"));
     refreshToken();
   }, []);
 
