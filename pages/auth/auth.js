@@ -1,61 +1,60 @@
 import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Cookie from "universal-cookie";
 
 import { login } from "../../api/auth/login";
 import { createUser } from "../../api/auth/createUser";
 import Layout from "../../components/layout/Layout";
 
-interface LoginProps<T> {
-  email: T;
-  setEmail: T;
-  password: T;
-  setPassword: T;
-}
+// interface LoginProps<T> {
+//   email: T;
+//   setEmail: T;
+//   password: T;
+//   setPassword: T;
+// }
 
-interface CreateProps<T> {
-  userName: T;
-  setUserName: T;
-  email: T;
-  setEmail: T;
-  password: T;
-  setPassword: T;
-}
+// interface CreateProps<T> {
+//   userName: T;
+//   setUserName: T;
+//   email: T;
+//   setEmail: T;
+//   password: T;
+//   setPassword: T;
+// }
 
-const Auth: React.FC = () => {
+const cookie = new Cookie();
+
+const Auth = () => {
   const router = useRouter();
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLogin, setIsLogin] = useState(true);
-  let loginProps: LoginProps<
-    string | React.Dispatch<React.SetStateAction<string>>
-  > = {
-    email: email,
-    setEmail: setEmail,
-    password: password,
-    setPassword: setPassword,
-  };
-  let createProps: CreateProps<
-    string | React.Dispatch<React.SetStateAction<string>>
-  > = {
-    userName: userName,
-    setUserName: setUserName,
-    email: email,
-    setEmail: setEmail,
-    password: password,
-    setPassword: setPassword,
-  };
+  // let loginProps: LoginProps<
+  //   string | React.Dispatch<React.SetStateAction<string>>
+  // > = {
+  //   email: email,
+  //   setEmail: setEmail,
+  //   password: password,
+  //   setPassword: setPassword,
+  // };
+  // let createProps: CreateProps<
+  //   string | React.Dispatch<React.SetStateAction<string>>
+  // > = {
+  //   userName: userName,
+  //   setUserName: setUserName,
+  //   email: email,
+  //   setEmail: setEmail,
+  //   password: password,
+  //   setPassword: setPassword,
+  // };
 
   const authUser = (e) => {
     e.preventDefault();
     if (isLogin === true) {
-      login(email, password).then((res) => {
-        if (res === true) {
-        } else if (res === false) {
-          alert("ログインに失敗しました");
-        }
-      });
+      const isSuccess = login(email, password);
+      cookie.set("NLN", isSuccess.user.id);
       router.push("/");
     } else if (isLogin === false) {
       createUser(userName, email, password).then((res) => {
