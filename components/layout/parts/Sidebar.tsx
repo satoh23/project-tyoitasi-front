@@ -49,6 +49,7 @@ const Sidebar = ({ nowLogin }) => {
                   className="min-w-max hover:bg-nav-yellow mb-4"
                   onClick={() => {
                     logout();
+                    router.push("/");
                   }}
                 >
                   <div className="border-b border-border-yellow ml-2 px-3 py-2 rounded text-yellow-600 hover:text-white hover:bg-nav-yellow text-left">

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/router";
 
 import { logout } from "../../../api/auth/logout";
@@ -116,6 +116,7 @@ const Navbar = ({ nowLogin }) => {
                   className="min-w-max hover:bg-nav-yellow mb-"
                   onClick={() => {
                     logout();
+                    router.push("/");
                   }}
                 >
                   <div className="border-b border-border-yellow ml-2 px-3 py-2 rounded text-yellow-600 hover:text-white hover:bg-nav-yellow text-left">
