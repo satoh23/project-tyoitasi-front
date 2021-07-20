@@ -13,8 +13,8 @@ export default function Article({ article }) {
                         src={article.thumbnail ? article.thumbnail : "/NoImage.jpg"} 
                         alt="icon" 
                         className="border rounded-lg"
-                        width={100}
-                        height={100}/>
+                        width={190}
+                        height={160}/>
                     <div className="items-center justify-between leading-tight w-full relative">
                         <div className="pl-3 pr-3 pt-1 pb-1 border-b border-yellow-200 font-semibold border-dashed">
                             {article.title}

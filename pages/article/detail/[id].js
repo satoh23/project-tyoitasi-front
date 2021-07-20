@@ -38,8 +38,8 @@ export default function Article({ staticArticle, id }) {
                 <Image
                     src={article.thumbnail ? article.thumbnail : "/NoImage.jpg"} 
                     alt="icon" 
-                    width={300}
-                    height={300}/>
+                    width={200}
+                    height={200}/>
                 <div className="w-3/6 text-xs md:text-base">
                     <div className="font-bold text-gray-500 border-b border-yellow-400 border-dotted">材料</div>
                     <div>{article.material}</div>
