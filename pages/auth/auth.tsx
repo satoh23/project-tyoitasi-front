@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { login } from "../../api/auth/login";
 import { createUser } from "../../api/auth/createUser";
 import Layout from "../../components/layout/Layout";
-import Cookie from "universal-cookie/es6";
+import Cookie from "universal-cookie";
 
 interface LoginProps<T> {
   email: T;
