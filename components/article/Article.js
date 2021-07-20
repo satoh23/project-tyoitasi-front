@@ -17,7 +17,7 @@ export default function Article({ article }) {
                         height={160}/>
                     <div className="items-center justify-between leading-tight w-full relative">
                         <div className="pl-3 pr-3 pt-1 pb-1 border-b border-yellow-200 font-semibold border-dashed">
-                            {article.title}
+                            {article.title}{article.thumbnail}
                         </div>
                         <div className="pl-3 pr-3 pt-1 text-xs sm:text-sm line-clamp-3 text-gray-800">
                             {article.body}
