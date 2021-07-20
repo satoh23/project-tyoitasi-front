@@ -145,6 +145,7 @@ const Create = () => {
           file_reader.addEventListener('load', function(e) {
           let encodedFile = e.target.result
           encodedFile = encodedFile.replace(/^data:\w+\/\w+;base64,/, "")
+          console.log(encodedFile)
           setArticle({...article, thumbnail: encodedFile})
           })
           setIsChangeFile(true)
