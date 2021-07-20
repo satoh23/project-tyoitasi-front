@@ -139,6 +139,7 @@ const Create = () => {
   const encodeFile = (e) => {
       if (e.target.files[0]) {
           setPreviwThumbnail(window.URL.createObjectURL(e.target.files[0]));
+          console.log(window.URL.createObjectURL(e.target.files[0]))
           let file_reader = new FileReader();
           file_reader.readAsDataURL(e.target.files[0]);
           file_reader.addEventListener('load', function(e) {
