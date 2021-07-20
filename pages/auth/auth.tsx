@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { login } from "../../api/auth/login";
 import { createUser } from "../../api/auth/createUser";
 import Layout from "../../components/layout/Layout";
+import Cookie from "universal-cookie/es6";
 
 interface LoginProps<T> {
   email: T;
@@ -21,6 +22,8 @@ interface CreateProps<T> {
   password: T;
   setPassword: T;
 }
+
+const cookie = new Cookie();
 
 const Auth: React.FC = () => {
   const router = useRouter();
@@ -54,7 +57,8 @@ const Auth: React.FC = () => {
         if (res === false) {
           alert("ログインに失敗しました");
         } else {
-          console.log(res.user.id);
+          cookie.set("UID", res.user.id);
+          window.location.reload();
         }
       });
       router.push("/");
