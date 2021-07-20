@@ -1,5 +1,5 @@
 export async function login(email: string, password: string) {
-  let isSuccess: any = false;
+  let isSuccess: any;
   const result = await fetch(
     `${process.env.NEXT_PUBLIC_RESTAPI_URL}api/v1/login/`,
     {
