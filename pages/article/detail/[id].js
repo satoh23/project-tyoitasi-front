@@ -38,6 +38,7 @@ export default function Article({ staticArticle, id }) {
                 <Image
                     src={article.thumbnail ? article.thumbnail : "/NoImage.jpg"} 
                     alt="icon" 
+                    className="rounded-lg"
                     width={170}
                     height={170}/>
                 <div className="w-3/6 ml-3 text-xs md:text-base">
