@@ -51,10 +51,10 @@ const Auth: React.FC = () => {
     e.preventDefault();
     if (isLogin === true) {
       login(email, password).then((res) => {
-        if (res) {
-          console.log(res);
-        } else if (res === false) {
+        if (res === false) {
           alert("ログインに失敗しました");
+        } else {
+          console.log(res);
         }
       });
       router.push("/");
