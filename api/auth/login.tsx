@@ -17,6 +17,6 @@ export async function login(email: string, password: string) {
       return res.json();
     }
   });
-  window.location.reload();
+  // window.location.reload();
   return isSuccess;
 }
