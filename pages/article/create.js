@@ -166,7 +166,7 @@ const Create = () => {
           </div>
 
           <div className="flex w-full mt-12">
-            <span className="w-5/12 md:w-3/12 mt-2 text-sm">タイトル：</span>
+            <span className="w-5/12 md:w-3/12 mt-2 text-sm">タイトル{author}：</span>
             <input
               required
               className="mb-5 mr-6 sm:mr-0 appearance-none rounded-none relative inline-flex w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-yellow-400 focus:border-yellow-400 text-sm"
