@@ -1,5 +1,5 @@
 export async function login(email: string, password: string) {
-  let isSuccess: boolean = false;
+  let isSuccess: any = false;
   const result = await fetch(
     `${process.env.NEXT_PUBLIC_RESTAPI_URL}api/v1/login/`,
     {
@@ -14,7 +14,7 @@ export async function login(email: string, password: string) {
     if (res.status === 400) {
       isSuccess = false;
     } else if (res.ok) {
-      isSuccess = true;
+      return res.json();
     }
   });
   window.location.reload();

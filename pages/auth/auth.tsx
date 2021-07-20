@@ -52,6 +52,7 @@ const Auth: React.FC = () => {
     if (isLogin === true) {
       login(email, password).then((res) => {
         if (res === true) {
+          console.log(res);
         } else if (res === false) {
           alert("ログインに失敗しました");
         }
