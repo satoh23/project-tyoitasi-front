@@ -54,7 +54,7 @@ const Auth: React.FC = () => {
         if (res === false) {
           alert("ログインに失敗しました");
         } else {
-          console.log(res.user);
+          console.log(res.user.id);
         }
       });
       router.push("/");
