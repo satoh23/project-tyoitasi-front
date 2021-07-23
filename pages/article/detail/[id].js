@@ -21,6 +21,18 @@ const displayMaterials = (materials) => {
     }
 }
 
+const displayBody = (body) => {
+    const splitWords = /;|；/
+    const bodyList = body.split(splitWords)
+    if (body) {
+        return (
+            <span className="mt-2">
+                {bodyList.map((body, index) => <div key={index} className="pt-2 border-b border-yellow-400 border-dotted">・{body}</div>)}
+            </span>
+        )
+    }
+}
+
 export default function Article({ staticArticle, id }) {
     const router = useRouter();
     const {data: article, mutate} = useSWR(
@@ -61,7 +73,7 @@ export default function Article({ staticArticle, id }) {
                     <span className="ml-3">○作り方○</span>
                 </div>
                 <div className="px-5 whitespace-pre-wrap">
-                    {article.body}
+                    {article.body ? displayBody(article.body) : ""}
                 </div>
             </div>
             </article>
