@@ -10,7 +10,8 @@ import { getAllArticleIds, getArticleData } from "../../../lib/article/getList";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const displayMaterials = (materials) => {
-    const materialList = materials.split(' ')
+    const splitWords = / |　/
+    const materialList = materials.split(splitWords)
     if (materialList) {
         return (
             <span>
