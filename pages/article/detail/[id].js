@@ -27,8 +27,16 @@ const displayBody = (body) => {
     bodyList.pop()
     if (body) {
         return (
-            <span className="mt-2">
-                {bodyList.map((body, index) => <div key={index} className="pb-6 border-b border-yellow-400 border-dotted"><span className="text-lg font-bold text-gray-500">{index+1}</span><span className="ml-5 block">{replaceLF(body, index)}</span></div>)}
+            <span>
+                {bodyList.map((body, index) => 
+                    <div key={index} className="pb-6 border-b border-yellow-400 border-dotted">
+                        <span className="text-lg font-bold text-gray-500">
+                            {index+1}
+                        </span>
+                        <span className="ml-5 block">
+                            {replaceLF(body, index)}
+                        </span>
+                    </div>)}
             </span>
         )
     }
