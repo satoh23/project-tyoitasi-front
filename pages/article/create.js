@@ -35,6 +35,9 @@ const Create = () => {
       alert("カテゴリを選択してください")
       return
     }
+    if (article.body.slice(-1)===/;|；/) {
+      setArticle({ ...article, body: article.body.slice(0,-1) })
+    }
     if (isChangeFile) {
         await fetch(
             `${process.env.NEXT_PUBLIC_RESTAPI_URL}api/v1/create-article/`,
