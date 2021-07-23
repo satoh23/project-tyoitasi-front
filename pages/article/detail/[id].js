@@ -27,7 +27,7 @@ const displayBody = (body) => {
     if (body) {
         return (
             <span className="mt-2">
-                {bodyList.map((body, index) => <div key={index} className="pb-6"><span className="text-lg font-bold">{index}</span><span className="border-b border-yellow-400 border-dotted">{body}</span></div>)}
+                {bodyList.map((body, index) => <div key={index} className="pb-6"><span className="border-b border-yellow-400 border-dotted"><span className="text-lg font-bold">{index+1}.</span>{body}</span></div>)}
             </span>
         )
     }
