@@ -138,15 +138,17 @@ const Create = () => {
     }}
   const encodeFile = (e) => {
       if (e.target.files[0]) {
-          setPreviwThumbnail(window.URL.createObjectURL(e.target.files[0]));
+          // setPreviwThumbnail(window.URL.createObjectURL(e.target.files[0]));
           let file_reader = new FileReader();
           file_reader.readAsDataURL(e.target.files[0]);
           file_reader.addEventListener('load', function(e) {
           let encodedFile = e.target.result
+          setPreviwThumbnail(encodedFile)
           encodedFile = encodedFile.replace(/^data:\w+\/\w+;base64,/, "")
           setArticle({...article, thumbnail: encodedFile})
           })
           setIsChangeFile(true)
+          console.log(window.URL.createObjectURL(e.target.files[0]))
       }
   };
   return (
