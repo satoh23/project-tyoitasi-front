@@ -27,10 +27,15 @@ const displayBody = (body) => {
     if (body) {
         return (
             <span className="mt-2">
-                {bodyList.map((body, index) => <div key={index} className="pb-6 border-b border-yellow-400 border-dotted"><span className="text-lg font-bold">{index+1}.</span>{body}</div>)}
+                {bodyList.map((body, index) => <div key={index} className="pb-6 border-b border-yellow-400 border-dotted"><span className="text-lg font-bold text-gray-500">{index+1}.</span>{replacedBody(body)}</div>)}
             </span>
         )
     }
+}
+
+const replaceLF = (body) => {
+    const replacedBody = body.replace(/n/, "");
+    return replacedBody
 }
 
 export default function Article({ staticArticle, id }) {
