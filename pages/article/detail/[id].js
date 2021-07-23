@@ -14,8 +14,8 @@ const displayMaterials = (materials) => {
     const materialList = materials.split(splitWords)
     if (materialList) {
         return (
-            <span>
-                {materialList.map((material, index) => <div key={index}>{material}</div>)}
+            <span className="mt-2">
+                {materialList.map((material, index) => <div key={index} className="pb-2 border-border-yellow border-b">・{material}</div>)}
             </span>
         )
     }
