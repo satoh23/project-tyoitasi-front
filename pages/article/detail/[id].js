@@ -34,7 +34,7 @@ const displayBody = (body) => {
 }
 
 const replaceLF = (body) => {
-    const replacedBody = body.replace(/n/, "");
+    const replacedBody = body.replace(/\n/, "");
     return replacedBody
 }
 
