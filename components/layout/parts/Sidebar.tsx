@@ -16,7 +16,7 @@ const Sidebar = ({ nowLogin }) => {
             {nowLogin ? (
               <>
                 <Link href="/article/create">
-                  <a className="border-b border-border-yellow w-full px-3 py-2 mb-4 mt-4 rounded text-yellow-600 hover:bg-hover-yellow hover:text-white">
+                  <a className="border-b border-border-yellow w-full px-5 py-2 mb-4 mt-4 rounded text-yellow-600 hover:bg-hover-yellow hover:text-white">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6 inline-block pb-1 mr-1"
