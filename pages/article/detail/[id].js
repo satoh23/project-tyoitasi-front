@@ -15,7 +15,7 @@ const displayMaterials = (materials) => {
     if (materialList) {
         return (
             <span className="mt-2">
-                {materialList.map((material, index) => <div key={index} className="pb-2 border-border-yellow border-b">・{material}</div>)}
+                {materialList.map((material, index) => <div key={index} className="pt-2 border-b border-yellow-400 border-dotted">・{material}</div>)}
             </span>
         )
     }
@@ -53,7 +53,7 @@ export default function Article({ staticArticle, id }) {
                     width={170}
                     height={170}/>
                 <div className="w-3/6 ml-3 lg:ml-8 text-xs md:text-base">
-                    <div className="font-bold text-gray-500 border-b border-yellow-400 border-dotted">材料</div>
+                    <div className="font-bold text-gray-500 border-b border-yellow-400 border-dotted pl-2">○材料○</div>
                     <div>{article.material ? displayMaterials(article.material) : ""}</div>
                 </div>
                 </div>
