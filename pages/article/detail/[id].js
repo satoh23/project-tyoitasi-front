@@ -29,7 +29,7 @@ export default function Article({ staticArticle, id }) {
     }
     return (
         <Layout>
-            <article className="bg-yellow-100 border-border-yellow border w-4/5 rounded-md pb-3">
+            <article className="bg-yellow-100 border-border-yellow border w-4/5 md:w-1/2 rounded-md pb-3">
             <div className="w-5/6 m-auto rounded-md">
                 <div className="w-full font-bold m-auto text-md md:text-xl text-center p-3 text-gray-500 border-b border-yellow-300">
                     {article.title}
