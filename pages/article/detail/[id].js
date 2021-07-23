@@ -41,7 +41,7 @@ export default function Article({ staticArticle, id }) {
                     className="rounded-lg"
                     width={170}
                     height={170}/>
-                <div className="w-3/6 ml-3 text-xs md:text-base">
+                <div className="w-3/6 ml-3 lg:ml-8 text-xs md:text-base">
                     <div className="font-bold text-gray-500 border-b border-yellow-400 border-dotted">材料</div>
                     <div>{article.material}</div>
                 </div>
