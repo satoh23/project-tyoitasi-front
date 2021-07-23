@@ -53,7 +53,7 @@ export default function Article({ staticArticle, id }) {
                     height={170}/>
                 <div className="w-3/6 ml-3 lg:ml-8 text-xs md:text-base">
                     <div className="font-bold text-gray-500 border-b border-yellow-400 border-dotted">材料</div>
-                    <div>{displayMaterials(article.material)}</div>
+                    <div>{article.material ? displayMaterials(article.material) : ""}</div>
                 </div>
                 </div>
                 <div className="font-bold text-xs md:text-base text-gray-500 border-b border-yellow-300 p-1 mb-5">
