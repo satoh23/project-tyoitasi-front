@@ -196,7 +196,7 @@ const Create = () => {
               required
               className="mb-5 mr-6 sm:mr-0 appearance-none rounded-none relative inline-flex w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-yellow-400 focus:border-yellow-400 text-sm"
               type="text"
-              placeholder="半角スペースを挟むことで複数登録できます(例：生卵 袋麺 ねぎ)"
+              placeholder="スペースを挟むことで複数登録できます(例：生卵 袋麺 ねぎ)"
               maxLength="50"
               value={article.material}
               onChange={(e) => setArticle({ ...article, material: e.target.value })}
