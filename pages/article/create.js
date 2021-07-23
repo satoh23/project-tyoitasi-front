@@ -184,7 +184,7 @@ const Create = () => {
               required
               className="resize-none mr-6 sm:mr-0 mb-5 appearance-none rounded-none relative inline-flex w-full h-80 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-yellow-400 focus:border-yellow-400 text-sm"
               type="text"
-              placeholder={/手順を加えたい時は;を記述してください\n\n例:\n鍋にお湯を沸かす;\n麺を茹でる.../}
+              placeholder={`手順を加えたい時は;を記述してください\n\n例:\n鍋にお湯を沸かす;\n麺を茹でる\n等.../`}
               value={article.body}
               onChange={(e) => setArticle({ ...article, body: e.target.value })}
             />
