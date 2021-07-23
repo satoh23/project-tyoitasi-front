@@ -24,6 +24,7 @@ const displayMaterials = (materials) => {
 const displayBody = (body) => {
     const splitWords = /;|；/
     const bodyList = body.split(splitWords)
+    bodyList.pop()
     if (body) {
         return (
             <span className="mt-2">
