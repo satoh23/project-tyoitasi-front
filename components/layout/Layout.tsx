@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Head>
-        <title>ちょいたし！テスト</title>
+        <title>ちょいたし！</title>
       </Head>
       <header>
         <Navbar nowLogin={nowLogin} />
