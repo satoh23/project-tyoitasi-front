@@ -27,13 +27,16 @@ const displayBody = (body) => {
     if (body) {
         return (
             <span className="mt-2">
-                {bodyList.map((body, index) => <div key={index} className="pb-6 border-b border-yellow-400 border-dotted"><span className="text-lg font-bold text-gray-500">{index+1}.</span>{replaceLF(body)}</div>)}
+                {bodyList.map((body, index) => <div key={index} className="pb-6 border-b border-yellow-400 border-dotted"><span className="text-lg font-bold text-gray-500 mr-5">{index+1}.</span>{replaceLF(body, index)}</div>)}
             </span>
         )
     }
 }
 
-const replaceLF = (body) => {
+const replaceLF = (body, index) => {
+    if (index === 0) {
+        return body
+    }
     const replacedBody = body.replace(/\n/, "");
     return replacedBody
 }
