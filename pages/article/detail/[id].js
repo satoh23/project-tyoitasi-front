@@ -24,6 +24,9 @@ const displayMaterials = (materials) => {
 const displayBody = (body) => {
     const splitWords = /;|；/
     const bodyList = body.split(splitWords)
+    if (bodyList[bodyList.length-1] === "") {
+        bodyList.pop()
+    }
     if (body) {
         return (
             <span>
