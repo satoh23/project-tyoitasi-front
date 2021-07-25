@@ -26,6 +26,10 @@ const Layout = ({ children }) => {
     <div>
       <Head>
         <title>ちょいたし！</title>
+        <meta
+          name="google-site-verification"
+          content="TfAwnqU50Ea7kAnKx-85bzBiYBU-bh4BCtMR3AM8lK8"
+        />
       </Head>
       <header>
         <Navbar nowLogin={nowLogin} />
