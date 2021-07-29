@@ -118,7 +118,7 @@ const Edit = () => {
         });
       }
     } else {
-      await fetch(`${process.env.NEXT_PUBLIC_RESTAPI_URL}api/v1/edit-user/`, {
+      await fetch(`${process.env.NEXT_PUBLIC_RESTAPI_URL}api/v1/edit-user-not-icon/`, {
         method: "PATCH",
         body: JSON.stringify({
           user_id: user.id,
@@ -158,7 +158,7 @@ const Edit = () => {
         });
       }
       if (wasGetNewToken) {
-        await fetch(`${process.env.NEXT_PUBLIC_RESTAPI_URL}api/v1/edit-user/`, {
+        await fetch(`${process.env.NEXT_PUBLIC_RESTAPI_URL}api/v1/edit-user-not-icon/`, {
           method: "PATCH",
           body: JSON.stringify({
             user_id: user.id,
