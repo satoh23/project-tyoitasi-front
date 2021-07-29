@@ -269,7 +269,7 @@ const Edit = () => {
           <div className="text-center">
             <div>
               <Image
-                className="rounded-full"
+                className="rounded-lg"
                 src={user.icon ? user.icon : "/anonymous.jpg"}
                 alt="icon"
                 width={400}
