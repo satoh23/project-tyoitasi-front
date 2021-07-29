@@ -21,7 +21,7 @@ const apiUrl = `${process.env.NEXT_PUBLIC_RESTAPI_URL}api/v1/get-list-category/`
 const Create = () => {
   const router = useRouter();
   const author = cookie.get("UID")
-  const [article, setArticle] = useState({author: "", thumbnail: null, title: "", body: "", material: "", category: ""})
+  const [article, setArticle] = useState({author: "", thumbnail: null, title: "", body: "", mainMaterial: "", material: "", category: ""})
   const [previwThumbnail, setPreviwThumbnail] = useState("")
   const [isChangeFile, setIsChangeFile] = useState(false);
 
@@ -41,7 +41,7 @@ const Create = () => {
             {
             method: "POST",
             body: JSON.stringify({author_id: author, thumbnail: article.thumbnail, encoded_thumbnail: article.thumbnail, title: article.title,
-                                  body: article.body, material: article.material, category: article.category}),
+                                  body: article.body, main_material: article.mainMaterial, material: article.material, category: article.category}),
             headers: {
                 "Content-Type": "application/json",
             },
@@ -78,7 +78,7 @@ const Create = () => {
                 {
                 method: "POST",
                 body: JSON.stringify({author_id: author, thumbnail: article.thumbnail, encoded_thumbnail: article.thumbnail, title: article.title,
-                                      body: article.body, material: article.material, category: article.category}),
+                                      body: article.body, main_material: article.mainMaterial, material: article.material, category: article.category}),
                 headers: {
                     "Content-Type": "application/json",
                 },
@@ -91,7 +91,7 @@ const Create = () => {
             `${process.env.NEXT_PUBLIC_RESTAPI_URL}api/v1/create-article-not-thumbnail/`,
             {
               method: "POST",
-              body: JSON.stringify({author_id: author, title: article.title, body: article.body, material: article.material, category: article.category}),
+              body: JSON.stringify({author_id: author, title: article.title, body: article.body, main_material: article.mainMaterial, material: article.material, category: article.category}),
               headers: {
                 "Content-Type": "application/json",
               },
@@ -127,7 +127,7 @@ const Create = () => {
                 `${process.env.NEXT_PUBLIC_RESTAPI_URL}api/v1/create-article-not-thumbnail/`,
                 {
                   method: "POST",
-                  body: JSON.stringify({author_id: author, title: article.title, body: article.body, material: article.material, category: article.category}),
+                  body: JSON.stringify({author_id: author, title: article.title, body: article.body, main_material: article.mainMaterial, material: article.material, category: article.category}),
                   headers: {
                     "Content-Type": "application/json",
                   },
@@ -191,12 +191,24 @@ const Create = () => {
           </div>
 
           <div className="flex w-full">
-            <span className="w-5/12 md:w-3/12 mt-1 text-sm">材料：</span>
+            <span className="w-5/12 md:w-3/12 mt-1 text-sm">アレンジ元の食材：</span>
             <input
               required
               className="mb-5 mr-6 sm:mr-0 appearance-none rounded-none relative inline-flex w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-yellow-400 focus:border-yellow-400 text-sm"
               type="text"
-              placeholder="スペースを挟むことで複数登録できます(例：生卵 袋麺 ねぎ)"
+              placeholder="例：サッポロ一番塩ラーメン"
+              maxLength="50"
+              value={article.mainMaterial}
+              onChange={(e) => setArticle({ ...article, mainMaterial: e.target.value })}
+            />
+          </div>
+
+          <div className="flex w-full">
+            <span className="w-5/12 md:w-3/12 mt-1 text-sm">その他の食材：</span>
+            <input
+              className="mb-5 mr-6 sm:mr-0 appearance-none rounded-none relative inline-flex w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-yellow-400 focus:border-yellow-400 text-sm"
+              type="text"
+              placeholder="スペースを挟むことで複数登録できます(例：生卵 ねぎ)"
               maxLength="50"
               value={article.material}
               onChange={(e) => setArticle({ ...article, material: e.target.value })}
