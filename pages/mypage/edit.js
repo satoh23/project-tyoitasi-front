@@ -51,6 +51,7 @@ const Edit = () => {
             icon: res.user_icon,
             encodedIcon: res.encoded_icon,
           });
+          console.log(res.user_icon)
         });
     };
     getUserDetail();
