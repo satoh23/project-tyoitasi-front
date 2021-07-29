@@ -213,6 +213,7 @@ const Edit = () => {
             <div className="text-center">
               <div>
                 <Image
+                  className="rounded-full"
                   src={isChangeFile ? previwIcon : user.icon ? user.icon : "/anonymous.jpg"}
                   alt="icon"
                   width={400}
@@ -268,6 +269,7 @@ const Edit = () => {
           <div className="text-center">
             <div>
               <Image
+                className="rounded-full"
                 src={user.icon ? user.icon : "/anonymous.jpg"}
                 alt="icon"
                 width={400}

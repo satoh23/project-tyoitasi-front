@@ -64,6 +64,7 @@ export default function Article({ staticArticle, id }) {
 
     useEffect(() => {
         mutate();
+        console.log(article.thumbnail)
     }, []);
 
     if (router.isFallback  ||  !article) {
