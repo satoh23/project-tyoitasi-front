@@ -84,8 +84,8 @@ export default function Article({ staticArticle, id }) {
                     width={170}
                     height={170}/>
                 <div className="w-3/6 ml-3 lg:ml-8 text-xs md:text-base">
-                    <div className="font-bold text-gray-500 border-b border-yellow-400 border-dotted pl-2">○アレンジ元○</div>
-                    <div className="mb-3">{article.main_material}</div>
+                    <div className="font-bold text-yellow-700 border-b border-yellow-400 border-dotted pl-2">○アレンジ元○</div>
+                    <div className="m-3">{article.main_material}</div>
                     <div className="font-bold text-gray-500 border-b border-yellow-400 border-dotted pl-2">○材料○</div>
                     <div>{article.material ? displayMaterials(article.material) : ""}</div>
                 </div>
