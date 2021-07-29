@@ -179,15 +179,15 @@ const Edit = () => {
 
   const encodeFile = (e) => {
     if (e.target.files[0]) {
-      setPreviwIcon(window.URL.createObjectURL(e.target.files[0]));
       let file_reader = new FileReader();
       file_reader.readAsDataURL(e.target.files[0]);
       file_reader.addEventListener("load", function (e) {
         let encodedFile = e.target.result;
+        setPreviwIcon(encodedFile)
         encodedFile = encodedFile.replace(/^data:\w+\/\w+;base64,/, "");
         setNewUser({ ...newUser, icon: encodedFile, encodedIcon: encodedFile });
-        setIsChangeFile(true);
       });
+      setIsChangeFile(true);
     }
   };
 
@@ -212,7 +212,7 @@ const Edit = () => {
             <div className="text-center">
               <div>
                 <Image
-                  src={isChangeFile ? previwIcon : user.icon}
+                  src={isChangeFile ? previwIcon : user.icon ? user.icon : "/anonymous.jpg"}
                   alt="icon"
                   width={400}
                   height={350}
