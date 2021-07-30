@@ -61,7 +61,7 @@ export default function Home({ staticArticles }) {
 
     return (
         <Layout>
-            <form onSubmit={filteringArticle} className="flex w-full justify-center justify-items-center">
+            <form onSubmit={filteringArticle} className="flex w-full justify-center justify-items-center pb-6 mb-3 border-b border-yellow-400 border-dotted">
                 <span className="mt-1 mr-3 text-sm">検索:</span>
                 <input
                 required
@@ -74,7 +74,7 @@ export default function Home({ staticArticles }) {
                 />
                 <button
                 type="submit"
-                className="bg-transparent bg-yellow-300 hover:bg-white text-white hover:text-yellow-300 hover:border-yellow-300 rounded px-2"
+                className="bg-transparent bg-yellow-300 hover:bg-white text-white hover:text-yellow-300 rounded px-2"
                 >
                     検索
                 </button>
