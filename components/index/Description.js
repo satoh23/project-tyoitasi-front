@@ -1,16 +1,19 @@
 import React from "react";
-import dynamic from "next/dynamic";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-const Carousel = dynamic(() => import("@brainhubeu/react-carousel"), {
-  ssr: false,
-});
+import 'swiper/swiper.scss';
 
 const Description = () => {
   return (
     <div className="w-full text-center font-bold text-2xl m-5">
-      <Carousel plugins={["arrows"]}>
-        <img src="/NoImage.jpg"/>
-      </Carousel>
+    <Swiper
+      spaceBetween={50}
+      slidesPerView={3}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+      <SwiperSlide>Slide 1</SwiperSlide>
+    </Swiper>
       <div className="mb-5">
         インスタント食品に1品だけ足して美味しくするサイト
       </div>
