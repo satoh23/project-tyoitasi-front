@@ -12,6 +12,8 @@ const Description = () => {
       onSwiper={(swiper) => console.log(swiper)}
     >
       <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
     </Swiper>
       <div className="mb-5">
         インスタント食品に1品だけ足して美味しくするサイト
