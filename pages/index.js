@@ -61,7 +61,7 @@ export default function Home({ staticArticles }) {
 
     return (
         <Layout>
-            <form method="post" onSubmit={filteringArticle}>
+            <form onSubmit={filteringArticle}>
                 <div className="flex w-full">
                     <span className="w-5/12 md:w-3/12 mt-1 text-sm">検索</span>
                     <input
@@ -76,7 +76,7 @@ export default function Home({ staticArticles }) {
                 </div>
                 <button
                 type="submit"
-                className="inline mr-3 ml-5 bg-transparent font-bold bg-yellow-300 hover:bg-white text-white hover:text-yellow-300 hover:text-white py-2 px-3 rounded"
+                className="mr-3 ml-5 bg-transparent font-bold bg-yellow-300 hover:bg-white text-white hover:text-yellow-300 hover:text-white py-2 px-3 rounded"
                 >
                     検索する
                 </button>

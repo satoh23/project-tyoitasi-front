@@ -23,7 +23,7 @@ export default function Article({ article }) {
                             {article.body}
                         </div>
                         <div className="absolute left-1 bottom-1 text-yellow-600 w-32 sm:w-auto truncate">
-                            <span className="text-xs">{article.category_name}</span>
+                            <span className="text-xs">{article.category_name}/{article.main_material}</span>
                         </div>
                         <div className="absolute right-3 bottom-1 text-gray-600">
                             <span className="text-xs">作者: {article.author}</span>
