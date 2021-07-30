@@ -24,7 +24,7 @@ export default function Home({ staticArticles }) {
     }); 
     const [mainMaterial, setMainMaterial] = useState("")
 
-    const [fillterdArticles, setFillterdArticles] = (data?.sort(
+    const [fillterdArticles, setFillterdArticles] = useState(data?.sort(
         (a,b) => new Date(b.created_date) - new Date(a.created_date)
     ))
 
