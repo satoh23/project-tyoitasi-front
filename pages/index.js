@@ -61,12 +61,12 @@ export default function Home({ staticArticles }) {
 
     return (
         <Layout>
-            <form onSubmit={filteringArticle} className="flex w-full">
+            <form onSubmit={filteringArticle} className="flex w-full justify-center">
                 <span className="w-2/3">
                     <span className="w-5/12 md:w-3/12 mt-1 text-sm">検索</span>
                     <input
                     required
-                    className="mb-5 mr-6 sm:mr-0 appearance-none rounded-none relative inline-flex w-2/3 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-yellow-400 focus:border-yellow-400 text-sm"
+                    className="mr-6 sm:mr-0 appearance-none rounded-none relative inline-flex w-2/3 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-yellow-400 focus:border-yellow-400 text-sm"
                     type="text"
                     placeholder="サッポロ一番"
                     maxLength="50"
@@ -76,7 +76,7 @@ export default function Home({ staticArticles }) {
                 </span>
                 <button
                 type="submit"
-                className="mr-3 ml-5 bg-transparent font-bold bg-yellow-300 hover:bg-white text-white hover:text-yellow-300 hover:text-white py-2 px-3 rounded"
+                className="bg-transparent font-bold bg-yellow-300 hover:bg-white text-white hover:text-yellow-300 hover:text-white px-3 rounded"
                 >
                     検索する
                 </button>
