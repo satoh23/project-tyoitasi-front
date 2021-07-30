@@ -51,6 +51,7 @@ export default function Home({ staticArticles }) {
             }
         })
         .then((res) => {
+            console.log("aaa")
             fillterdArticles = res.sort(
                 (a, b) => new Date(b.created_date) - new Date(a.created_date)
             );
