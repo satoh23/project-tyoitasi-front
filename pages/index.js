@@ -83,7 +83,7 @@ export default function Home({ staticArticles }) {
                 {nowFiltering ? 
                 <button
                 onClick={() => window.location.reload()}
-                className="bg-transparent bg-indigo-300 hover:bg-white text-white hover:text-indigo-300 rounded px-2 ml-2"
+                className="block bg-transparent bg-indigo-300 hover:bg-white text-white hover:text-indigo-300 rounded px-2 ml-2"
                 >
                     リセット
                 </button>:
