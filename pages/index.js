@@ -74,9 +74,9 @@ export default function Home({ staticArticles }) {
                 />
                 <button
                 type="submit"
-                className="bg-transparent font-bold bg-yellow-300 hover:bg-white text-white hover:text-yellow-300 hover:text-white rounded"
+                className="bg-transparent bg-yellow-300 hover:bg-white text-white hover:text-yellow-300 hover:text-white rounded px-1"
                 >
-                    検索する
+                    検索
                 </button>
             </form>
             <div className="mx-auto justify-center items-center w-full">
