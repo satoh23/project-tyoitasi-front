@@ -24,9 +24,9 @@ export default function Home({ staticArticles }) {
     }); 
     const [mainMaterial, setMainMaterial] = useState("")
 
-    let fillterdArticles = data?.sort(
+    const [fillterdArticles, setFillterdArticles] = (data?.sort(
         (a,b) => new Date(b.created_date) - new Date(a.created_date)
-    );
+    ))
 
     useEffect(() => {
         mutate();
@@ -51,10 +51,9 @@ export default function Home({ staticArticles }) {
             }
         })
         .then((res) => {
-            console.log("aaa")
-            fillterdArticles = res.sort(
+            setFillterdArticles(res.sort(
                 (a, b) => new Date(b.created_date) - new Date(a.created_date)
-            );
+            ))
         })
     }
 
