@@ -63,10 +63,10 @@ export default function Home({ staticArticles }) {
         <Layout>
             <form onSubmit={filteringArticle} className="flex w-full justify-center justify-items-center">
                 <span className="w-1/2">
-                    <span className="w-5/12 md:w-3/12 mt-1 text-sm">検索</span>
+                    <span className="mt-1 text-sm">検索</span>
                     <input
                     required
-                    className="mr-6 sm:mr-0 appearance-none rounded-none relative inline-flex w-7/12 md:w-9/12 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-yellow-400 focus:border-yellow-400 text-sm"
+                    className="appearance-none rounded-none relative inline-flex px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-yellow-400 focus:border-yellow-400 text-sm"
                     type="text"
                     placeholder="サッポロ一番"
                     maxLength="50"
