@@ -77,7 +77,7 @@ export default function Article({ staticArticle, id }) {
                     {article.title}
                 </div>
                 <div className="flex mt-3 mb-3">
-                <span className="h-auto">
+                <span className="h-auto m-auto">
                 <Image
                     src={article.thumbnail ? article.thumbnail : "/NoImage.jpg"} 
                     alt="icon" 
