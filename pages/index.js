@@ -23,8 +23,9 @@ export default function Home({ staticArticles }) {
         initialData: staticArticles,
     }); 
     const [mainMaterial, setMainMaterial] = useState("")
+    const [nowFiltering, setNowFiltering] = useState(false)
 
-    const [fillterdArticles, setFillterdArticles] = useState(data?.sort(
+    const [filterdArticles, setFilterdArticles] = useState(data?.sort(
         (a,b) => new Date(b.created_date) - new Date(a.created_date)
     ))
 
@@ -51,13 +52,14 @@ export default function Home({ staticArticles }) {
             }
         })
         .then((res) => {
-            setFillterdArticles(res.sort(
+            setFilterdArticles(res.sort(
                 (a, b) => new Date(b.created_date) - new Date(a.created_date)
             ))
+            setNowFiltering(true)
         })
     }
 
-    if (!fillterdArticles) return <div>loading...</div>
+    if (!filterdArticles) return <div>loading...</div>
 
     return (
         <Layout>
@@ -78,16 +80,18 @@ export default function Home({ staticArticles }) {
                 >
                     検索
                 </button>
+                {nowFiltering ? 
                 <button
                 onClick={() => window.location.reload()}
                 className="bg-transparent bg-indigo-300 hover:bg-white text-white hover:text-indigo-300 rounded px-2 ml-2"
                 >
                     リセット
-                </button>
+                </button>:
+                ""}
             </form>
             <div className="mx-auto justify-center items-center w-full">
-                {fillterdArticles &&
-                  fillterdArticles.map((article, index) => <Article key={index} article={article}/>)}
+                {filterdArticles &&
+                  filterdArticles.map((article, index) => <Article key={index} article={article}/>)}
             </div>
         </Layout>
     )
