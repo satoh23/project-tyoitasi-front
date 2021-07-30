@@ -67,7 +67,7 @@ export default function Home({ staticArticles }) {
                 <span className="mt-1 mr-3 text-sm">検索:</span>
                 <input
                 required
-                className="w-1/2 mr-3 appearance-none rounded-none relative inline-flex px-2 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-yellow-400 focus:border-yellow-400 text-sm"
+                className="w-1/3 md:w-1/2 mr-3 appearance-none rounded-none relative inline-flex px-2 py-1 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-yellow-400 focus:border-yellow-400 text-sm"
                 type="text"
                 placeholder="サッポロ一番"
                 maxLength="50"
@@ -79,7 +79,7 @@ export default function Home({ staticArticles }) {
                 className="bg-transparent bg-yellow-300 hover:bg-white text-white hover:text-yellow-300 rounded px-2"
                 >
                     検索
-                </button><br/>
+                </button>
                 {nowFiltering ?
                 <button
                 onClick={() => window.location.reload()}
