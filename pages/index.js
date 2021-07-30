@@ -62,7 +62,7 @@ export default function Home({ staticArticles }) {
     return (
         <Layout>
             <form onSubmit={filteringArticle} className="flex w-full justify-center justify-items-center">
-                <span className="w-2/3">
+                <span className="w-full">
                     <span className="w-5/12 md:w-3/12 mt-1 text-sm">検索</span>
                     <input
                     required
