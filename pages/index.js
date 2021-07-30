@@ -79,11 +79,11 @@ export default function Home({ staticArticles }) {
                 className="bg-transparent bg-yellow-300 hover:bg-white text-white hover:text-yellow-300 rounded px-2"
                 >
                     検索
-                </button>
-                {nowFiltering ? 
+                </button><br/>
+                {nowFiltering ?
                 <button
                 onClick={() => window.location.reload()}
-                className="block bg-transparent bg-indigo-300 hover:bg-white text-white hover:text-indigo-300 rounded px-2 ml-2"
+                className="bg-transparent bg-indigo-300 hover:bg-white text-white hover:text-indigo-300 rounded px-2 ml-2"
                 >
                     リセット
                 </button>:
