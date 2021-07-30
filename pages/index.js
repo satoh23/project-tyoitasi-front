@@ -74,7 +74,7 @@ export default function Home({ staticArticles }) {
                 />
                 <button
                 type="submit"
-                className="bg-transparent bg-yellow-300 hover:bg-white text-white hover:text-yellow-300 hover:text-white rounded px-1"
+                className="bg-transparent bg-yellow-300 hover:bg-white text-white hover:text-yellow-300 hover:text-white hover:border-yellow-300 rounded px-2"
                 >
                     検索
                 </button>
