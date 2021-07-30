@@ -57,13 +57,6 @@ export default function Home({ staticArticles }) {
         })
     }
 
-    const filteringReset = () => {
-        e.preventDefault();
-        setFillterdArticles(data?.sort(
-            (a,b) => new Date(b.created_date) - new Date(a.created_date)
-        ))
-    }
-
     if (!fillterdArticles) return <div>loading...</div>
 
     return (
@@ -86,8 +79,8 @@ export default function Home({ staticArticles }) {
                     検索
                 </button>
                 <button
-                onClick={filteringReset}
-                className="bg-transparent bg-indigo-300 hover:bg-white text-white hover:text-indigo-300 rounded px-2"
+                onClick={() => window.location.reload()}
+                className="bg-transparent bg-indigo-300 hover:bg-white text-white hover:text-indigo-300 rounded px-2 ml-2"
                 >
                     リセット
                 </button>
