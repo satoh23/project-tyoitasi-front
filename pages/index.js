@@ -76,7 +76,7 @@ export default function Home({ staticArticles }) {
                 </div>
                 <button
                 type="submit"
-                className="mr-3 ml-5 bg-transparent font-bold bg-yellow-300 hover:bg-white text-white hover:text-yellow-300 hover:text-white py-2 px-3 rounded"
+                className="inline mr-3 ml-5 bg-transparent font-bold bg-yellow-300 hover:bg-white text-white hover:text-yellow-300 hover:text-white py-2 px-3 rounded"
                 >
                     検索する
                 </button>
